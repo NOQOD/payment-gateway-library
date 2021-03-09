@@ -9,9 +9,21 @@ The process will follow like any other online payment option that starts from in
 There are two methods availed through NOQOD payment gateway:
 1.	Express payment (If the user is  non-NOQOD user)
 2.	Pay via NOQOD (If the user is NOQOD user)
+
 ## 1. Pay using Express method
 *The method is meant for the general audience that does not fall in the category of NOQOD users.  
 
 *This is simply a guest payment type where any random user can make use of NOOQD payment platform while entering his payment details like card number and expiry date
 
 *This type will act as the third party payment type for the payers where they can simply use the platform that shall be integrated with the NOQOD API
+
+## 2. Pay using NOQOD
+*The method is meant for the NOQOD users
+
+*The process of accepting payments online through this method will go through the verification of the users (being NOQOD users)
+
+*The process will have two cases, one if the payment is being done from the same device and the other if it is done from another
+
+1. If payment is being made from different device, a dynamic QR will be generated for the user. The NOQOD user will scan this QR from NOQOD app and pay after choosing the card and entering the IPIN (as password). The user will be then navigated back to the original website.
+2. If payment is being made from same device, the user will be availed to enter mobile number registered with NOQOD and do the payment with OTP verification
+
