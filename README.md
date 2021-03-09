@@ -56,7 +56,9 @@ let noqod = npg( "7006911868",  myToken  );
 
 ### 3. Create signature
 After initialising the params, create a hash (signature) for the details:
-1. 	Merchant id     2.	Amount     3.	   Order Id
+1. Merchant id 
+2. Amount    
+3. Order Id
 
 let  signature = noqod.hashInfo( "7006911868", "550", "19012138137211" );
 
@@ -71,7 +73,10 @@ Once the request is sent, NOQOD Payment gateway will verify the hash and navigat
 
 ### 6. Navigate Back
 After the completion of payment process, user will be navigated back with params: 
-1.	  Order Id        2.	     Transaction Id      3.     Verified signature    4.	  Order   
+1.	Order Id        
+2.	Transaction Id     
+3.	Verified signature  
+4. Order   
 ![image 1](https://user-images.githubusercontent.com/42232644/110454405-333a5f00-80ed-11eb-949b-6ce29d712030.png)
 
 
