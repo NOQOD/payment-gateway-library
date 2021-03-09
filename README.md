@@ -30,5 +30,18 @@ There are two methods availed through NOQOD payment gateway:
 ## Index guide for Integration
 ![image 1](https://user-images.githubusercontent.com/42232644/110445681-60364400-80e4-11eb-96b1-df1dce319a34.png)
 
+## How to integrate?
+As a business, you need to follow these steps for the integration process
+
+### 1. Import 
+Import a front-end library. This will contain a function called npg function. 
+
+
+
+
+
+
+
+
 
 
