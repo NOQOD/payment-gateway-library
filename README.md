@@ -28,6 +28,7 @@ There are two methods availed through NOQOD payment gateway:
 2. If payment is being made from same device, the user will be availed to enter mobile number registered with NOQOD and do the payment with OTP verification
 
 ## Index guide for Integration
+![image 1](https://user-images.githubusercontent.com/42232644/110445681-60364400-80e4-11eb-96b1-df1dce319a34.png)
 
 
 
