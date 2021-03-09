@@ -60,7 +60,20 @@ After initialising the params, create a hash (signature) for the details:
 
 let  signature = noqod.hashInfo( "7006911868", "550", "19012138137211" );
 
+### 4. Send Payment request
+Once the signature is created, payment request can be sent securely now. This request will contain following params: 
+1.  	Amount         2.	   Order Id         3.	   CallbackUrl          4.	   Generated hash(signature)
 
+noqod.sendRequest( "550", "19012138137211", "https://www.examplesite.com", signature);
+
+### 5. NOQOD Payment gateway checkout
+Once the request is sent, NOQOD Payment gateway will verify the hash and navigate the end user to checkout with the available payment methods of express payment or pay via NOQOD option as mentioned above. To follow with this process, API’s will hit on our backend to process the payment
+
+### 6. Navigate Back
+After the completion of payment process, user will be navigated back with params: 
+
+1.Order Id             2.	Transaction Id            3. Verified signature           4. Order
+![image 1](https://user-images.githubusercontent.com/42232644/110454405-333a5f00-80ed-11eb-949b-6ce29d712030.png)
 
 
 
