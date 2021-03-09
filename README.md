@@ -36,8 +36,23 @@ As a business, you need to follow these steps for the integration process
 ### 1. Import 
 Import a front-end library. This will contain a function called npg function. 
 
+ <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1/index.js">
+ </script>
 
+This npg function will expect two params which being token and merchant id. 
 
+#### Token Generation :
+An identifier as described above will be generated with the following steps:
+
+a. Visit the url https://npg.noqod.com.sd and sign in using your registered mobile number (Merchant Id) and password.
+
+b. Navigate to Integration page in the portal.
+
+c. Enter your server IP to whitelist it and generate your token.
+### 2. Initialise params
+The library contains the code that will first initialise token and merchant Id
+
+let noqod = npg( "7006911868",  myToken  );
 
 
 
