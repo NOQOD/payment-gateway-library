@@ -27,6 +27,6 @@ There are two methods availed through NOQOD payment gateway:
 1. If payment is being made from different device, a dynamic QR will be generated for the user. The NOQOD user will scan this QR from NOQOD app and pay after choosing the card and entering the IPIN (as password). The user will be then navigated back to the original website.
 2. If payment is being made from same device, the user will be availed to enter mobile number registered with NOQOD and do the payment with OTP verification
 
-##Index guide for Integration
+## Index guide for Integration
 
 
