@@ -36,7 +36,7 @@ As a business, you need to follow these steps for the integration process
 ### 1. Import 
 Import a front-end library. This will contain a function called npg function. 
 
- <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1/index.js">
+ <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1/index.js
  </script>
 
 This npg function will expect two params which being token and merchant id. 
@@ -54,7 +54,11 @@ The library contains the code that will first initialise token and merchant Id
 
 let noqod = npg( "7006911868",  myToken  );
 
+### 3. Create signature
+After initialising the params, create a hash (signature) for the details:
+1. 	Merchant id        2.	Amount         3.	   Order Id
 
+let  signature = noqod.hashInfo( "7006911868", "550", "19012138137211" );
 
 
 
