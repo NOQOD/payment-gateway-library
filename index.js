@@ -3472,7 +3472,7 @@
     token,
     key
   ) {
-    let gatewayUrl = "https://epic-lumiere-bcf712.netlify.app/";
+    let gatewayUrl = "http://gateway.noqod.com.sd/";
 
     let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
     injectIframe(gatewayUrl, urlParams);
