@@ -3489,7 +3489,6 @@
     } else {
       let gatewayUrl = "https://epic-lumiere-bcf712.netlify.app/";
       let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
-      sandbox;
       injectIframe(gatewayUrl, urlParams);
     }
   }
