@@ -3454,14 +3454,15 @@
 });
 
 (function (global) {
-  const npg = function (merchant_id, token) {
-    return new npg.init(merchant_id, token);
+  const npg = function (merchant_id, token, env) {
+    return new npg.init(merchant_id, token, env);
   };
 
-  npg.init = function (merchant_id, token) {
+  npg.init = function (merchant_id, token, env) {
     let self = this;
     self.merchant_id = merchant_id;
     self.token = token;
+    self.env = env;
   };
 
   function sendPaymentRequest(
@@ -3470,12 +3471,27 @@
     order_id,
     callback,
     token,
-    key
+    key,
+    env
   ) {
-    let gatewayUrl = "http://gateway.noqod.com.sd/";
+    // let gatewayUrl = "http://gateway.noqod.com.sd/";
+    // let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
+    // injectIframe(gatewayUrl, urlParams);
 
-    let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
-    injectIframe(gatewayUrl, urlParams);
+    if (env == "sandbox") {
+      let gatewayUrl = "https://epic-lumiere-bcf712.netlify.app/";
+      let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
+      injectIframe(gatewayUrl, urlParams);
+    } else if (env == "live") {
+      let gatewayUrl = "http://gateway.noqod.com.sd/";
+      let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
+      injectIframe(gatewayUrl, urlParams);
+    } else {
+      let gatewayUrl = "https://epic-lumiere-bcf712.netlify.app/";
+      let urlParams = `?merchant_id=${merchant_id}&amount=${amount}&order_id=${order_id}&callback=${callback}&token=${token}&key=${key}`;
+      sandbox;
+      injectIframe(gatewayUrl, urlParams);
+    }
   }
 
   function injectIframe(gatewayUrl, urlParams) {
@@ -3520,7 +3536,8 @@
         order_id,
         callback,
         this.token,
-        key
+        key,
+        this.env
       );
     },
     hashInfo: function (merchant_id, amount, order_id) {
