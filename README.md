@@ -36,10 +36,10 @@ As a business, you need to follow these steps for the integration process
 ### 1. Import 
 Import a front-end library. This will contain a function called npg function. 
 
- <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1/index.js
+ <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1.1/index.js
  </script>
 
-This npg function will expect two params which being token and merchant id. 
+This npg function will expect three params which being token, merchant id and an environment which might be either “sandbox” or “live” where sandbox points to staging and live points to the production environement 
 
 #### Token Generation :
 An identifier as described above will be generated with the following steps:
