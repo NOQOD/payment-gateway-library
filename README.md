@@ -76,8 +76,12 @@ After the completion of payment process, user will be navigated back with params
 1.	Order Id        
 2.	Transaction Id     
 3.	Verified signature  
-4. Order   
-![image 3](https://user-images.githubusercontent.com/42232644/110455318-4e599e80-80ee-11eb-97ec-92ea3a57bb18.png)
+4. Order
+5. Amount   
+
+
+![Group 107](https://user-images.githubusercontent.com/42232644/111281154-a3536280-8662-11eb-93bb-66c58355eccd.png)
+
 
 
 
