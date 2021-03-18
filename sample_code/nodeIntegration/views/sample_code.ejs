@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>PAYMENT GATEWAY</title>
+   <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1.1/index.js"></script>
+  </head>
+  <body onload="handleChekout()">
+    <div id="iframe">  	
+    </div>
+      <script>
+      let noqod = npg('<%- data.merchant_id %>', '<%- data.token %>','<%- data.status %>'); // merchant_id,token,status
+      let signature = noqod.hashInfo('<%- data.merchant_id %>', '<%- data.amount %>', '<%- data.order_id %>'); // merchant_id,amount,order_id
+      function handleChekout() {
+        noqod.sendRequest(
+          '<%- data.amount %>', // amount
+         '<%- data.order_id %>', // order-id
+           "http://localhost:8080/callback", // your callback url
+          signature // hash
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NOQOD CALLBACK</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style type="text/css">
+		.col-md-4{
+			text-align: center;
+			margin-top:40px;
+		}
+	</style>
+        <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        const transaction_id = urlParams.get('transaction_id');
+        const order_id = urlParams.get('order_id');
+        const order = urlParams.get('order');
+        const Signature = urlParams.get('signature');
+        const amount = urlParams.get('amount');
+    </script>
+</head>
+<body class="container">
+    <div class="row" id="row1">
+    	<div class="col-md-4">
+    	</div>
+    	<div class="col-md-4">
+    		 <h3>NOQOD CALLBACK</h3>
+    		 <a id="Success" class="btn btn-success">Success</a> 
+             <a id="Failure" class="btn btn-danger">Failure</a>
+    	</div>
+    	<div class="col-md-4">
+    	</div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("Success").href = `NOQOD_response.html?transaction_id=${transaction_id}&order_id=${order_id}&signature=${Signature}&amount=${amount}&order=true`
+        document.getElementById("Failure").href = `NOQOD_response.html?transaction_id=${transaction_id}&order_id=${order_id}&signature=${Signature}&amount=${amount}&order=false` 
+    </script>
+</body>
+</html>

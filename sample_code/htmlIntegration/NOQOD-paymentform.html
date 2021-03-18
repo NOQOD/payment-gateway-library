@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NOQOD_FORM</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1.1/index.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+	<style type="text/css">
+		.col-md-8
+		{ 
+			margin-top: 50px;
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	</style>
+</head>
+<body class="container">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<h1>Noqod Payment Gateway Form</h1><br>
+       	<label>Amount</label><br>
+       	<input type="text" name="amount" class="form-control" id="amount"><br>
+       	<label>Merchant Id</label><br>
+       	<input type="text" name="merchant_id" class="form-control" id="merchant_id"><br>
+       	<label>Order Id</label><br>
+       	<input type="text" name="order_id" class="form-control" id="order_id"><br>
+        <input type="radio" name="status" value="sandbox" checked id="status">&nbsp;<label>Staging</label>
+        <br><br>
+       	<input type="submit" id="btnPay" value="SUBMIT" class="btn btn-primary">
+       
+		</div>
+		<div class="col-md-2">
+			
+		</div>
+	</div>
+	<div id="iframe"></div>
+	 <script>
+      let btn = document.getElementById("btnPay");
+      btn.addEventListener("click", handleChekout);
+       function handleChekout(){	
+        function fetch (id){
+        	var value = document.getElementById(id).value;
+        	return value;
+        }
+        var token = "722840f1b09ed563ac8b74b14dce3d3d9bb11c392dafabced4ef0188beb9e237313f0aa027cdd5ff90cd50832359981473087be5a4216a6c7fb674e6f2736a76";
+      	var amount =  fetch("amount");
+      	var merchant_id = fetch("merchant_id");
+      	var order_id = fetch("order_id");
+      	var status = document.getElementById("status");
+        let noqod = npg(merchant_id, token,status); // merchant_id,token,status
+        var signature = noqod.hashInfo(merchant_id,amount, order_id); // merchant_id,amount,order_id
+        if(token.length != 0 && amount.length !=0 && merchant_id.length !=0 && order_id!=0 ){
+            noqod.sendRequest(
+              amount, // amount
+		          order_id, // order-id
+		           "D:/xampp/htdocs/sample_code/htmlIntegration/NOQOD_callback.html", // callback url
+		          signature // hash
+	        );
+        }
+      
+      }
+    </script>
+</body>
+</html>
