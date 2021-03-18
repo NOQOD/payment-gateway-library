@@ -83,7 +83,7 @@
    	trans.innerHTML = transaction_id;
    	var orderId = fetch('order_id');
     orderId.innerHTML = order_id;
-    let merchant_id = "7006911868"
+    let merchant_id = "7006911868"// your merchant_id
    	let noqod = npg();
    	var signature = noqod.hashInfo(merchant_id, amount , order_id);
    	function verify(){

@@ -10,7 +10,7 @@ error_reporting(0);
     <div id="iframe">  	
     </div>
        <?php
-        $token = "722840f1b09ed563ac8b74b14dce3d3d9bb11c392dafabced4ef0188beb9e237313f0aa027cdd5ff90cd50832359981473087be5a4216a6c7fb674e6f2736a76";
+        $token = "722840f1b09ed563ac8b74b14dce3d3d9bb11c392dafabced4ef0188beb9e237313f0aa027cdd5ff90cd50832359981473087be5a4216a6c7fb674e6f2736a76";// your token
 		    $merchant_id = $_POST["merchant_id"];
 		    $amount = $_POST["amount"];
 		    $order_id = $_POST["order_id"];

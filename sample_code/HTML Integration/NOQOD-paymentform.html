@@ -44,7 +44,7 @@
         	var value = document.getElementById(id).value;
         	return value;
         }
-        var token = "722840f1b09ed563ac8b74b14dce3d3d9bb11c392dafabced4ef0188beb9e237313f0aa027cdd5ff90cd50832359981473087be5a4216a6c7fb674e6f2736a76";
+        var token = "722840f1b09ed563ac8b74b14dce3d3d9bb11c392dafabced4ef0188beb9e237313f0aa027cdd5ff90cd50832359981473087be5a4216a6c7fb674e6f2736a76";//your token
       	var amount =  fetch("amount");
       	var merchant_id = fetch("merchant_id");
       	var order_id = fetch("order_id");
@@ -55,7 +55,7 @@
             noqod.sendRequest(
               amount, // amount
 		          order_id, // order-id
-		           "D:/xampp/htdocs/sample_code/htmlIntegration/NOQOD_callback.html", // callback url
+		           "D:/xampp/htdocs/sample_code/htmlIntegration/NOQOD_callback.html", // your callback url
 		          signature // hash
 	        );
         }
