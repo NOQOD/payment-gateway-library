@@ -3523,9 +3523,9 @@
   window.addEventListener("message", removeIframe, false);
 
   function removeIframe(e) {
-    const { callback, transactionId, orderId, key, order } = e.data;
+    const { callback, transactionId, orderId, key, order, amount } = e.data;
     document.getElementById("iframe").innerHTML = "";
-    window.location.href = `${callback}?transaction_id=${transactionId}&order_id=${orderId}&signature=${key}&order=${order}`;
+    window.location.href = `${callback}?transaction_id=${transactionId}&order_id=${orderId}&signature=${key}&order=${order}&amount=${amount}`;
   }
   npg.prototype = {
     sendRequest: function (amount, order_id, callback, key) {
