@@ -86,7 +86,7 @@ After the completion of payment process, user will be navigated back with params
 
 
 ### 7. Recommended verification
-Once the above steps are followed, it is recommened for you as merchant to verify the signature on your end 
+Once the above steps are followed, it is recommened for you as merchant to verify the signature on your end using noqod.hashInfo function
 
 
 
