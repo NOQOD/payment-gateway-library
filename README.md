@@ -52,7 +52,9 @@ c. Enter your server IP to whitelist it and generate your token.
 ### 2. Initialise params
 The library contains the code that will first initialise token and merchant Id
 
-let noqod = npg( "7006911868",  myToken  );
+let noqod = npg( "7006911868",  myToken, “sandbox” ); 
+or
+let noqod = npg( "7006911868",  myToken, “live” ); 
 
 ### 3. Create signature
 After initialising the params, create a hash (signature) for the details:
@@ -75,12 +77,16 @@ Once the request is sent, NOQOD Payment gateway will verify the hash and navigat
 After the completion of payment process, user will be navigated back with params: 
 1.	Order Id        
 2.	Transaction Id     
-3.	Verified signature  
+3.	Signature  
 4. Order
 5. Amount   
 
 
-![Group 107](https://user-images.githubusercontent.com/42232644/111281154-a3536280-8662-11eb-93bb-66c58355eccd.png)
+![Group 107](https://user-images.githubusercontent.com/42232644/111749490-e1958f80-88b7-11eb-9a2e-756566bf445c.png)
+
+
+### 7. Recommended verification
+Once the above steps are followed, it is recommened for you as merchant to verify the signature on your end using noqod.hashInfo function
 
 
 

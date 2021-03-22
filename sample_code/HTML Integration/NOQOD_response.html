@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Response</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1.1/index.js"></script>
+	<style type="text/css">
+		.col-md-4{
+			border-radius: 40px;
+		}
+		#info{
+			margin-top: 40px;
+			margin-bottom: 30px;
+			border-radius: 10px;
+			border-width: 1px;
+			border-style: solid;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			text-align: center;
+		}
+		.col-md-4{
+			text-align: center;
+			margin-top: 70px;
+		}
+		.alert{
+			text-align: center
+		}
+		#display{
+			text-align: center;
+			border-radius: 10px!important;
+		}
+		#message{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		const urlParams = new URLSearchParams(window.location.search);
+        const transaction_id = urlParams.get('transaction_id');
+        const order_id = urlParams.get('order_id');
+        const order = urlParams.get('order');
+        const amount = urlParams.get('amount');
+        const Signature = urlParams.get('signature');
+	</script>
+</head>
+<body class="container" onload="verify()">
+	<div class="row">
+	 <div class="col-md-4">
+	 	
+	 </div>	
+	 <div class="col-md-4">
+	 	<div class="row">
+	 		<div class="col-md-1">
+	 			
+	 		</div>
+	 		<div class="col-md-10" id="info">
+
+	 			<label>Transaction Id :</label>
+	 			<span id="transaction_id"></span>
+	 		<br/>
+	 		<label>Order Id :</label>
+	 		<span id="order_id"></span>
+	 		</div>
+	 		<div class="col-md-1">
+	 			
+	 		</div>
+	 		
+	 	</div>
+    	<div id="display">
+    		<label id="message"></label>
+    	</div>
+	 </div>
+	 <div class="col-md-4">
+	 	
+	 </div>
+	</div>
+   <script type="text/javascript">
+   	function fetch (id){
+   		var element = document.getElementById(id);
+   		return element
+   	}
+   	var trans = fetch('transaction_id');
+   	trans.innerHTML = transaction_id;
+   	var orderId = fetch('order_id');
+    orderId.innerHTML = order_id;
+    let merchant_id = "7006911868"// your merchant_id
+   	let noqod = npg();
+   	var signature = noqod.hashInfo(merchant_id, amount , order_id);
+   	function verify(){
+   		if(Signature == signature && order == "true"){
+   			 var display = fetch('display');
+    		 display.classList.add('alert-success');
+    		 var message = fetch('message');
+    		 message.innerHTML = "PAYMENT SUCCESS";	
+    }
+    else{
+   		 var display = fetch('display');
+    	 display.classList.add('alert-danger');
+    	 var message = fetch('message');
+    	 message.innerHTML = "PAYMENT FAILED";
+   		}
+   		   	}
+    
+   </script>
+</body>
+</html>

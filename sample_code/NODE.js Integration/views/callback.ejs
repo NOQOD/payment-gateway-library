@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NOQOD CALLBACK</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style type="text/css">
+		.col-md-4{
+			text-align: center;
+			margin-top:40px;
+		}
+	</style>
+</head>
+<body class="container">
+    <div class="row" id="row1">
+    	<div class="col-md-4">
+    	</div>
+    	<div class="col-md-4">
+    		 <h3>NOQOD CALLBACK</h3>
+    		 <a class="btn btn-success" href="/response?transaction_id=<%= data.transaction_id %>&order_id=<%= data.order_id%>&signature=<%= data.signature%>&amount=<%= data.amount %>&order=true">Success</a> 
+             <a class="btn btn-danger"  href="/response?transaction_id=<%= data.transaction_id %>&order_id=<%= data.order_id%>&signature=<%= data.signature%>&amount=<%= data.amount %>&order=false">Failure</a>
+    	</div>
+    	<div class="col-md-4">
+    	</div>
+    </div>
+</body>
+</html>
