@@ -4,7 +4,7 @@ error_reporting(0);
 <html>
   <head>
     <title>PAYMENT GATEWAY</title>
-<script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1.1/index.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/NOQOD/payment-gateway-library@vversion-1.1/index.js"></script>
   </head>
   <body onload="handleChekout()">
     <div id="iframe">  	
