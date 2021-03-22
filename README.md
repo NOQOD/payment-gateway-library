@@ -1,4 +1,4 @@
-# NOQOD payment gateway integration guide
+# NOQOD Payment Gateway Integration Guide
 ## Introduction
 As the rapid growth of the e-commerce sector has been besieging the world especially after the recent global pandemic in 2020, the demanding need of the channels to elevate online payments and the processes is necessary. Since NOQOD has already set forward to revolutionise payment ecosystem in African Countries, the document specifies the online payment integration process that NOQOD will follow up with, in order to give the businesses an another product ready to implement as NOQOD payment gateway.
 ### Purpose of the document
