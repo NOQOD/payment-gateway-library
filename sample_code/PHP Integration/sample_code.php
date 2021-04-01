@@ -23,7 +23,7 @@ error_reporting(0);
         noqod.sendRequest(
           <?php echo json_encode($amount) ?>, // amount
           <?php echo json_encode($order_id) ?>, // order-id
-           "http://localhost/sample_code/phpIntegration/NOQOD_callback.php", // your callback url
+           "http://localhost/sample_code/PHP%20Integration/NOQOD_callback.php", // your callback url
           signature // hash
         );
       }
