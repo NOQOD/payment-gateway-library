@@ -46,9 +46,12 @@ An identifier as described above will be generated with the following steps:
 
 a. Visit the url https://npg.noqod.com.sd and sign in using your registered mobile number (Merchant Id) and password.
 
-b. Navigate to Integration page in the portal.
+b. Choose the sandbox or live mode to proceed.
+ 
+c. Navigate to Integration page in the portal.
 
-c. Enter your server IP to whitelist it and generate your token.
+d. Enter your server IP to whitelist it and generate your token in any of the mode selected.
+ 
 ### 2. Initialise params
 The library contains the code that will first initialise token and merchant Id
 
